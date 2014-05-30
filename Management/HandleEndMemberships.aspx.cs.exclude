@@ -1,0 +1,99 @@
+﻿using System;
+using System.Linq;
+
+public partial class Management_HandleEndMemberships : System.Web.UI.Page
+{
+    Ajancy.Kimia_Ajancy db = null;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            int requestId = 0;
+            if (int.TryParse(Request.QueryString["id"], out requestId) && Request.QueryString["txt"] != null && Request.QueryString["cfm"] != null)
+            {
+                db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+                Ajancy.DriverEndMembershipRequest endRequest = db.DriverEndMembershipRequests.FirstOrDefault<Ajancy.DriverEndMembershipRequest>(jc => jc.RequestID == requestId);
+                endRequest.Reply = Request.QueryString["txt"].Length > 200 ? Request.QueryString["txt"].Substring(0, 200) : Request.QueryString["txt"];
+                endRequest.ReplyDate = DateTime.Now;
+                endRequest.Confirmed = Request.QueryString["cfm"].Equals("1");
+                db.SubmitChanges();
+                Response.Clear();
+                Response.Write("1");
+                Response.End();
+            }
+            else if (int.TryParse(Request.QueryString["id"], out requestId) && Request.QueryString["txt"] == null && Request.QueryString["cfm"] == null)
+            {
+                db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+                Ajancy.DriverEndMembershipRequest endRequest = db.DriverEndMembershipRequests.FirstOrDefault<Ajancy.DriverEndMembershipRequest>(jc => jc.RequestID == requestId);
+                Response.Clear();
+                Response.Write(endRequest.Reply);
+                Response.End();
+            }
+        }
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+        var query = from end in db.DriverEndMembershipRequests
+                    join jd in db.AjancyDrivers on end.AjancyDriverID equals jd.AjancyDriverID
+                    join dcc in db.DriverCertificationCars on jd.DriverCertificationCarID equals dcc.DriverCertificationCarID
+                    join dc in db.DriverCertifications on dcc.DriverCertificationID equals dc.DriverCertificationID
+                    join p in db.Persons on dc.PersonID equals p.PersonID
+                    join j in db.Ajancies on jd.AjancyID equals j.AjancyID
+                    where jd.LockOutDate == null
+                    select new
+                    {
+                        p.FirstName,
+                        p.LastName,
+                        p.NationalCode,
+                        Gender = p.Gender == 0 ? "مرد" : "زن",
+                        dc.DriverCertificationNo,
+                        end.RequestorRoleID,
+                        end.SubmitDate,
+                        end.Comment,
+                        end.ReplyDate,
+                        Data = string.Concat("this, ", end.RequestID, ", ", end.Confirmed ? "1" : "0"),
+                        j.AjancyName
+                    };
+
+        if (this.drpRequestorType.SelectedIndex == 0)
+        {
+            query = from q in query
+                    where q.RequestorRoleID == (byte)(Public.Role.AjancyManager) ||
+                             q.RequestorRoleID == (byte)(Public.Role.AjancySupervisor)
+                    select q;
+        }
+        else
+        {
+            query = from q in query
+                    where q.RequestorRoleID == (byte)(Public.Role.TaxiDriver)
+                    select q;
+        }
+
+
+        if (this.drpReplyMode.SelectedIndex == 0)
+        {
+            query = from q in query
+                    where q.ReplyDate != null
+                    select q;
+        }
+        else
+        {
+            query = from q in query
+                    where q.ReplyDate == null
+                    select q;
+        }
+
+        if (this.txtDateFrom.HasDate && this.txtDateTo.HasDate)
+        {
+            query = from q in query
+                    where q.SubmitDate >= this.txtDateFrom.GeorgianDate && q.SubmitDate <= this.txtDateTo.GeorgianDate
+                    select q;
+        }
+
+        this.lstComplaints.DataSource = query;
+        this.lstComplaints.DataBind();
+    }
+}

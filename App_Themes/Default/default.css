@@ -1,0 +1,838 @@
+﻿/*------------- General styles -----------------*/
+.section-title
+{
+	background-color: #fff9ea;
+	border: solid 1px #d1d9e4;
+	color: #c38628;
+	font-size: 13px;
+	margin: 0;
+	padding: 0px 10px;
+}
+
+/*------------ contols ---------------*/
+.label
+{
+	font-family: tahoma;
+	font-size: 15px;
+	width: 120px;
+}
+
+.label-color
+{
+	font-family: tahoma;
+	font-size: 16px;
+	height: 23px;
+	text-align: right;
+	background-color: #FFFFEC;
+	border: solid 1px #6B757E;
+}
+
+.label-gray
+{
+	font-family: tahoma;
+	font-size: 16px;
+	height: 24px;
+	text-align: right;
+	background-color: #ffffea;
+	border: solid 1px #c9c7ba;
+	padding: 0px 3px;
+}
+
+.label-message
+{
+	color: #d83b29;
+	font-size: 12px;
+}
+
+.validator
+{
+	color: #d83b29;
+	font-size: 10px;
+}
+
+.dropdown, .dropdown-middle, .dropdown-large
+{
+	border: solid 1px #c6c6c6;
+	font-family: tahoma;
+	font-size: 12px;
+	height: 24px;
+	width: 124px;
+}
+
+.dropdown-middle
+{
+	width: 184px;
+}
+
+.dropdown-large
+{
+	height: 25px;
+	width: 350px;
+}
+
+.button, .button-login
+{
+	background-color: #617aac;
+	border: solid 1px #344e87;
+	color: #fefdf5;
+	cursor: pointer;
+	font-family: tahoma;
+	font-size: 12px;
+	padding: 1px 20px 5px 20px;
+	text-align: center;
+}
+
+.button-calander
+{
+	background-image: url(images/button-calander.gif);
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none 0px;
+	float: right;
+	width: 27px;
+	height: 27px;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+.textbox, .textbox-focused, .textbox-middle, .textbox-middle-focused, .textbox-date, .textbox-login
+{
+	border: solid 1px #cdd6e2;
+	font-family: tahoma;
+	font-size: 13px;
+	height: 20px;
+	width: 120px;
+}
+
+.textbox-focused
+{
+	background-color: #edf2fc;
+	width: 120px;
+}
+
+.textbox-middle
+{
+	width: 180px;
+}
+
+.textbox-middle-focused
+{
+	/*background-color: #f7f9fb;*/
+	border: solid 1px #a2a2a2;
+	width: 180px;
+}
+
+.textbox-date
+{
+	direction: ltr;
+	float: right;
+	width: 90px;
+}
+
+.checkBox
+{
+	width: 130px;
+	font-size: 14px;
+	color: #46648e;
+	padding-left: 5px;
+	text-align: left;
+}
+
+/*------------- Common ---------------*/
+.error
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	color: Red;
+}
+
+.fieldName, .fieldName-large
+{
+	background-color: #fffcf6;
+	border: solid 1px #eeede5;
+	color: #46648e;
+	font-size: 12px;
+	height: 20px;
+	padding-left: 5px;
+	text-align: left;
+	width: 90px;
+}
+
+.fieldName-large
+{
+	width: 130px;
+}
+
+.pane
+{
+	border: solid 1px #d6dff7;
+	text-align: center;
+	padding: 5px 5px 5px 10px;
+	margin: 5px 5px;
+}
+
+.pane-left
+{
+	border-top: solid 1px #d6dff7;
+	padding: 5px 5px 5px 10px;
+	margin: 10px auto;
+	width: 85%;
+}
+
+.grid-container
+{
+	height: 310px;
+	margin: 5px 5px;
+}
+
+.title-bar
+{
+	background: url(images/title-taxi.png) no-repeat right top;
+	border-bottom: solid 3px #ededf0;
+	color: #597aec;
+	font: bold 20px Arial;
+	line-height: 30px;
+	margin: 0 12% 20px auto;
+	padding: 0 40px 1px 0;
+	text-align: right;
+	vertical-align: middle;
+	width: 65%;
+}
+
+.star
+{
+	color: #ffbd70;
+}
+
+.alarm
+{
+	background-color: #ffffcc;
+	border: solid 1px #ffdd77;
+	color: #e17912;
+	font-size: 15px;
+	margin: 5px auto;
+	padding: 5px 10px;
+	text-align: center;
+	width: 500px;
+}
+
+.announcement
+{
+	border: solid 1px #e4d6d6;
+	height: auto;
+	padding: 10px;
+	width: 660px;
+}
+
+.calander
+{
+	height: 19px;
+	padding-top: 1px;
+	width: 100px;
+	border: solid 1px #7f9db9;
+	background-color: #fff;
+	background-image: url('images/calander.png');
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+}
+
+.centered
+{
+	height: auto;
+	margin: 0px auto;
+}
+/*-------------- Dialog ----------------*/
+.dialog
+{
+	background-color: #f8f8f7;
+	border: solid 1px #e1d8e9;
+	display: none;
+	padding: 4px;
+	position: absolute;
+	z-index: 99;
+}
+
+.dialog .exit-bar
+{
+	background-color: #e1d8e9;
+	color: #ff8027;
+	font: bold 16px Arial;
+	margin-bottom: 13px;
+	width: 100%;
+}
+
+.dialog textarea
+{
+	font-size: 12px;
+}
+
+.dialog span
+{
+	color: #b1c4f2;
+	font-size: 14px;
+}
+
+.dialog #send
+{
+	background-color: #cad1fb;
+	border: solid 1px #a4b8ff;
+	color: #2e7db8;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	vertical-align: middle;
+	width: 50px;
+}
+
+.dialog #send:hover
+{
+	border: solid 1px #9a9fc9;
+	cursor: pointer;
+}
+
+/*------------- Default.aspx ------------*/
+#date
+{
+	color: #ee8148;
+	font: bold 14px Arial;
+	padding: 0 0 5px 25px;
+	text-align: left;
+}
+.panel-body 
+{
+	border-left: solid 1px #e6e6e6; 
+	border-right: solid 1px #e6e6e6;
+	height: auto;
+    width: 490px;
+}
+.panel-header .body
+{
+	background-color: #6c8eb7;
+	color: #fefefe;
+	font: bold 15px Arial;
+	height: 35px;
+	width: 478px;
+}
+.panel-header .left
+{
+	background: url(images/midbox-l.png) no-repeat;
+	width: 7px;
+}
+.panel-header .right
+{
+	background: url(images/midbox-r.png) no-repeat;
+	width: 7px;
+}
+.panel-footer
+{
+	background: url(images/exc-bottom.png) no-repeat;
+	height: 6px;
+	width: 492px;
+}
+#letters-header
+{
+	background: url(images/letters-header.png) no-repeat right top;
+	border-bottom: solid 1px #e7e7eb;
+	height: 50px;
+	margin: 0 40px 10px 0;
+	width: 380px;
+}
+
+ul#letters 
+{
+	list-style: none;
+	margin: 0 auto;
+	padding: 0 0 7px 0;
+}
+
+#letters li
+{
+	background-color: #fbfbfb;
+	border: solid 1px #e7e7eb;
+	display: inline-block;
+	margin: 6px 10px 0 0;
+	padding: 5px 4px 3px 3px;
+	height: 90px;
+	width: 460px;
+}
+
+#letters li img
+{
+	border: solid 1px #e7e7eb;
+	float: right;
+	margin: 0 2px 1px 3px;
+	padding: 3px;
+	height: 80px;
+	width: 75px;
+}
+
+#letters li div
+{
+	float: right;
+	height: 85px;
+	width: 369px;
+}
+
+#letters li a
+{
+	color: #ee8148;
+	font: bold 15px Arial;	
+	text-decoration: none;
+}
+
+#letters li .lett-date
+{
+	background-image: none;
+	color: #2664eb; 
+	float: left;
+	font-size: 11px;
+}
+
+#letters li p
+{
+	background-image: none;
+	font: normal 12px Arial;
+	margin: 0 17px 0 0;
+	padding: 0;
+}
+
+ul#links 
+{
+	border-left: solid 1px #e7e7eb;
+	border-right: solid 1px #e7e7eb;
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+}
+
+#links li
+{	
+	border-bottom: solid 1px #e7e7eb;
+}
+
+#links li a
+{	
+	background: url(images/link.png) no-repeat 98% center;
+	color: #3f77b3;
+	display: block;
+	font: normal 12px tahoma;
+	padding-right: 25px;
+	text-decoration: none;
+	line-height: 28px;
+	vertical-align: middle;
+}
+
+#links li a:hover
+{	
+	background-color: #f5f9fc;	
+}
+
+#quote
+{
+	background-color: #fbfdff;
+	border: solid 1px #bad6e9;
+	margin: 20px auto 0 auto;
+	padding: 10px 5px;
+	height: 60px;
+	width: 640px;
+}
+
+#info-panel
+{
+	background-color: #f7f9fb;
+	border: solid 1px #e8ebed;
+	color: #999999;
+	height: auto;
+	margin: 5px auto;
+	padding: 7px;
+	width: 350px;
+}
+#info-panel img
+{
+	clear: both;
+	float: left;
+	margin-right: 10px;
+	padding: 3px;
+}
+#info-panel p
+{
+	color: #51596f;
+	font: bold 14px tahoma;
+}
+#info-panel p.info
+{
+	color: #427bae;
+	font: bold 15px Arial;
+	margin: 5px 5px 10px 0;
+}
+
+#info-panel ul
+{
+	list-style: none;
+	margin: 5px 4px 0 6px;
+	padding: 0;
+}
+
+#info-panel ul li
+{
+	background: url(images/verified.gif) no-repeat right center;
+	font-size: 12px;
+	color: #696969;	
+	padding: 4px 18px 4px 10px;	
+	text-decoration: none;
+}
+
+img.link 
+{
+	border: solid 1px #d2d2db;
+	height: 80px;
+	margin: 3px auto;
+	padding: 3px;
+	width: 160px;
+}
+
+/*----------- Requests/LicenseRequst.aspx ---------------*/
+table#partners
+{
+	border: solid 1px #d2d2db;
+	border-collapse: collapse;
+}
+
+#partners td
+{
+	color: #8baaea;
+	border-bottom: solid 1px #d2d2db;
+	border-left: solid 1px #d2d2db;
+	font-size: 14px;
+	height: 30px;
+	text-align: center;
+}
+
+#partners .header
+{
+	background-color: #d2d2db;
+	color: #706fb9;
+	font-size: 15px;
+	height: 22px;
+}
+
+#partners .counter
+{
+	text-align: center;
+	width: 40px;
+}
+
+/*---------------- Login.aspx ----------------*/
+.membership
+{
+	border: solid 1px #c6c6c6;
+	margin: 70px auto 0px auto;
+	padding: 20 10px 5px 10px;
+	width: 640px;
+}
+
+#login-header
+{
+	background: url(images/login-header.png) no-repeat;
+	margin: 70px auto 0px auto;
+	padding: 0;
+	height: 101px;
+	width: 645px;
+}
+
+#login-body
+{
+	border-left: solid 1px #c6c6c6;
+	border-right: solid 1px #c6c6c6;
+	margin: 0px 25px 0px 0px;
+	position: relative;
+	padding: 0;
+	height: 200px;
+	width: 640px;
+}
+
+#login-footer
+{
+	background: url(images/login-footer.png) no-repeat;
+	margin: 0px auto;
+	padding: 0;
+	height: 7px;
+	width: 645px;
+}
+
+#login-body img
+{
+	position: absolute;
+	left: 40px;
+	top: 40px;
+	height: 115px;
+	width: 185px;
+}
+
+.button-login
+{
+	padding: 1px 10px 5px 10px;
+	margin-top: 5px;
+}
+
+.button:hover, .button-login:hover
+{
+	color: #dcf1b8;
+}
+
+.textbox-login
+{
+	border: solid 1px #bdc7d8;
+	margin-top: 5px;
+	height: 18px;
+	width: 160px;
+}
+
+.label-login
+{
+	color: #35496a;
+	font-size: 12px;
+	padding-left: 5px;
+	width: 60px;
+}
+
+#login-dialog strong
+{
+	border-bottom: solid 1px #c0c0c0;
+	display: block;
+	font: bold 22px Arial;
+	color: #ff6f91;
+	line-height: 26px;
+	margin: 0;
+	vertical-align: middle;
+	width: 300px;
+}
+
+/*-------------- Comment.aspx ---------------*/
+.top-comment
+{
+	background: #f3f5f9 url(images/comment.png) no-repeat right;
+	border-left: solid 1px #cfd6e0;
+	border-right: solid 1px #cfd6e0;
+	border-top: solid 1px #cfd6e0;
+	color: #00b3ca;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: left;
+	vertical-align: middle;
+	width: 748px;
+}
+
+table.comment
+{
+	border: solid 1px #cfd6e0;
+	border-collapse: collapse;
+	width: 800px;
+}
+
+.comment th
+{
+	background-color: #f3f5f9;
+	border-bottom: solid 1px #ececfc;
+	color: #3b5998;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0px 4px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.comment td
+{
+	border-bottom: solid 1px #ececfc;
+	color: #9391ac;
+	font-size: 13px;
+	height: 23px;
+	padding: 0px 2px;
+	text-align: right;
+}
+
+.comment .field
+{
+	color: #8989d4;
+	font-size: 13px;
+	width: 55px;
+}
+
+.comment .text
+{
+	background-color: #fafafa;
+	color: #7b7b7b;
+	font-size: 13px;
+	min-height: 50px;
+	margin: 4px 3px;
+	padding: 4px;
+	text-align: right;
+}
+
+/*------------- Members/EditPassword.aspx-------------*/
+#warning
+{
+	background-color: #ffffc5;
+	border: dashed 1px #ff8128;
+	font: bold 17px Arial;
+	color: #d60101;
+	padding: 8px 5px;
+	width: 500px;
+}
+/*------------- DriversList.aspx -----------------*/
+table#list-header
+{
+	border: solid 1px #e5e5e5;
+	border-collapse: collapse;
+}
+
+#list-header th
+{
+	background: url(images/titlebg.jpg) repeat-x;
+	border-left: solid 1px #e5e5e5;
+	color: #f3f5f9;
+	font: bold 14px Arial;
+	line-height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	width: 120px;
+}
+
+table.list-item-even, table.list-item-odd
+{
+	border-left: solid 1px #e5e5e5;
+	border-right: solid 1px #e5e5e5;
+	border-bottom: solid 1px #e5e5e5;
+	border-collapse: collapse;
+}
+
+.list-item-odd
+{
+	background-color: #fafafa;
+}
+
+.list-item-even td, .list-item-odd td
+{
+	border-left: solid 1px #e5e5e5;
+	color: #4493ae;
+	font: normal 11px Tahoma;
+	line-height: 22px;
+	height: 22px;
+	text-align: center;
+	vertical-align: middle;
+	width: 120px;
+}
+
+.list-item-even:hover, .list-item-odd:hover
+{
+	background-color: #fff9d7;
+}
+
+table.list-item-even .item-box, table.list-item-odd .item-box, table.list-item-even .info, table.list-item-odd .info
+{
+	color: #6699ff;
+	font: bold 11px Arial;
+	text-decoration: none;
+}
+
+table.list-item-even .item-box, table.list-item-odd .item-box
+{
+	float: left;
+	margin: 3px 13px 0px 0px;
+}
+
+table.list-item-even .item-box:hover, table.list-item-odd .item-box:hover, table.list-item-even .info:hover, table.list-item-odd .info:hover
+{
+	color: #4492bd;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.complaint
+{
+	background: url(images/comment.png) no-repeat right top;
+	padding: 3px 0px;
+}
+
+.complaint div
+{
+	background-color: #f1f4fb;
+	color: #7a8ab3;
+	height: 40px;
+	margin-right: 40px;
+	padding: 3px 5px;
+	text-align: right;
+	width: 90%;
+}
+
+/*--------------- DataPager ---------------*/
+.PageButton, .CurrentPageButton, .NextPrevPageButton, .CurrentPageButton
+{
+	color: #7A7A7A;
+	font-size: 10px;
+	padding: 2px;
+	border: solid 1px #D6D7D9;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	width: 15px;
+}
+.PageButton
+{
+	background-image: url(images/listview/pager_bkg.png);
+}
+.PageButton:hover
+{
+	border: solid 1px #E6E6A5;
+	background-image: url(images/listview/pager_bkg_over.png);
+}
+.CurrentPageButton:hover
+{
+	border: solid 1px #E6E6A5;
+	background-image: url(images/listview/pager_bkg_over.png);
+}
+.NextPrevPageButton
+{
+	background-image: url(images/listview/pager_bkg.png);
+	width: 25px;
+}
+.NextPrevPageButton:hover
+{
+	border: solid 1px #E6E6A5;
+	background-image: url(images/listview/pager_bkg_over.png);
+}
+#pager
+{
+	direction: ltr;
+	margin: 5px auto;
+	text-align: center;
+}
+/*-------------- Union/AddFuelCard.aspx -------------*/
+table#list
+{
+	border-collapse: collapse;
+	margin: 10px auto;
+	padding: 0px 0px;
+	width: 500px;
+}
+
+#list th
+{
+	border: #8fb1d9 1px solid;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	background-color: #d3e3fd;
+	text-align: center;
+}
+
+#list td
+{
+	border: solid 1px #8fb1d9;
+	font-family: Tahoma;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	text-align: center;
+}

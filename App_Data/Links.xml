@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Links>
+  <Link id="1" isActive="True">
+    <Title>پروانه کسب تاکسی تلفنی</Title>
+    <Target>http://www.javascriptsource.com/</Target>
+  </Link>
+  <Link id="2">
+    <Title>پیوند</Title>
+    <Target>http://www.yahoo.com/</Target>
+  </Link>
+  <Link id="3">
+    <Title>پیوند</Title>
+    <Target>http://www.yahoo.com/</Target>
+  </Link>
+  <Link id="4">
+    <Title>پیوند</Title>
+    <Target>http://www.yahoo.com/</Target>
+  </Link>
+  <Link id="5">
+    <Title>پیوند</Title>
+    <Target>http://www.yahoo.com/</Target>
+  </Link>
+</Links>

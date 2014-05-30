@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<%@ Register Src="UC/SideBarLinks.ascx" TagName="SideBarLinks" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+<head runat="server">
+    <title></title>
+    <meta name="description" content="اتحادیه صنف موسسات توریستی و اتومبیل کرایه کشور">
+    <meta name="keywords" content="اتحادیه,کشوری,آژانس,تاکسی تلفنی,پیک موتوری,کارت سوخت,موسسات توریستی,اتومبیل کرایه,پارس ناوگان">
+    <meta charset="UTF-8">
+    <script src='<%# ResolveUrl("~/Scripts/jquery-1.4.3.min.js")%>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/Scripts/javascript.js")%>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/Scripts/calendar.js")%>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/Scripts/Jalali.js")%>' type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <div id="header">
+    </div>
+    <div id="wrapper">
+        <div id="menu-bar">
+            <div style="float: right;">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" DataSourceID="SiteMapDataSource1"
+                    StaticEnableDefaultPopOutImage="false" DisappearAfter="300" RenderingMode="List">
+                </asp:Menu>
+            </div>
+            <div id="header-tail">
+                <div id="login-status">
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="ورود" LogoutText="خروج"
+                        ToolTip="ورود/خروج" LoginImageUrl="~/App_Themes/Default/images/loginbutton.png"
+                        LogoutImageUrl="~/App_Themes/Default/images/logoutbutton.png" Font-Bold="true"
+                        Font-Underline="false" ForeColor="#d0d0d0" Font-Size="15px" LogoutAction="Refresh"
+                        LogoutPageUrl="~/Default.aspx" OnLoggedOut="LoginStatus1_LoggedOut" />
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            <div id="sidebar">
+                <asp:Panel ID="pnlLogedIn" runat="server" CssClass="pnlLogedin" Visible="false">
+                    <div id="lblUser" runat="server" class="lbl-user">
+                    </div>
+                    <div id="lblRole" runat="server" class="lbl-role">
+                    </div>
+                    <asp:LinkButton ID="lnkLogOut" runat="server" OnClick="lnkLogOut_Click" CssClass="lnk-Logout"
+                        CausesValidation="false" Text="خروج" />
+                </asp:Panel>
+                <asp:Panel ID="pnlLogIn" runat="server" CssClass="pnlLogin">
+                    <div>
+                        <a href="Login.aspx"><span>ورود به سامانه</span></a>
+                    </div>
+                </asp:Panel>
+                <div id="links-bar">
+                    <div class="top-menu">
+                        <a href="#">درخواست پروانه کسب ...</a></div>
+                    <div class="sub-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=1">تاکسی تلفنی</a></div>
+                    <div class="sub-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=2">پیک تلفنی</a></div>
+                    <div class="sub-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=3">تاکسی تلفنی ویژه جانبازی</a></div>
+                    <div class="sub-menu" style="margin-bottom: 3px;">
+                        <a runat="server" href="./Announcement.aspx?mode=4">پیک تلفنی ویژه جانبازی</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=5">درخواست کارت سوخت</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=6">مباشرت</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=7">گازسوز کردن خودرو</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=8">درخواست دفترچه صلاحیت</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=9">تمدید دفترچه صلاحیت</a></div>
+                    <div class="top-menu">
+                        <a runat="server" href="./Announcement.aspx?mode=10">درخواست بیمه رانندگان</a></div>
+                    <div class="top-menu">
+                        <a href="#">درخواست پروانه کسب</a></div>
+                    <div id="address-pic">
+                    </div>
+                    <p>
+                        شیراز - بلوار زرهی<br />
+                        ابتدای خیابان شبان جنب
+                        <br />
+                        مسجد امتیاز نو ساختمان 555
+                        <br />
+                        تلفن : 9 - 8314898 - 0711
+                    </p>
+                </div>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="cph" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="footer">
+        <div style="position: absolute; right: 60px; top: 2px;">
+            این سایت متعلق به اتحادیه صنف موسسات توریستی و اتومبیل کرایه شهرستان شیراز و در
+            اختیار اتحادیه کشوری می باشد
+        </div>
+        <div style="position: absolute; left: 7px; top: 3px;">
+            <b>کیمیا پردازان سبز</b> : 2304102-0711
+        </div>
+    </div>
+    <asp:SiteMapDataSource ID="SiteMapDataSource1" ShowStartingNode="false" runat="server"
+        SiteMapProvider="PortalSiteMapProvider" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+﻿ <asp:TextBox SkinID="TextBox" runat="server" CssClass="textbox" onblur="javascript:return txt_exit(this);" onFocus="javascript:return txt_focus(this)"/>
+ <asp:TextBox SkinID="TextBoxMedium" runat="server" CssClass="textbox-middle" onblur="javascript:return txtmiddle_exit(this);" onFocus="javascript:return txtmiddle_focus(this)"/>
+ <asp:TextBox SkinID="TextBoxLarge" runat="server" CssClass="textbox-large" onblur="javascript:return txtlarge_exit(this);" onFocus="javascript:return txtlarge_focus(this)"/>
+ 
+

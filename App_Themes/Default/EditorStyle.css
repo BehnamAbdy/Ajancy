@@ -1,0 +1,427 @@
+﻿.frameStyle
+{
+	width: 600px;
+	height: 400px;
+	border: solid 1px #c5c6c2;
+}
+
+.buttonStyle
+{
+	border: solid 1px #e7e8e6;
+	width: 22px;
+	height: 22px;
+	background-color: Transparent;
+}
+
+.buttonStyle:hover
+{
+	border: solid 1px #c5c6c2;
+	background-color: Transparent;
+}
+
+.contextDivStyle
+{
+	border-right: #ffccff 1pt outset;
+	border-top: #ffccff 1pt outset;
+	border-left: #ffccff 1pt outset;
+	border-bottom: #ffccff 1pt outset;
+	position: absolute;
+	background-color:#fffcd1;
+	width: 130px;
+	text-align:center;
+	padding:2px;
+}
+
+.contextItemStyle
+{
+	font-size: 8pt;
+	font-family: verdana;
+	padding-left: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.contextItemStyle:hover
+{
+	color: #ffffff;
+	background-color: #009900; /*background-color: #00ccf5;*/
+}
+
+.itemStyle
+{
+	font-size: 8pt;
+	font-family: verdana;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.itemStyle:hover
+{
+	color: #ffffff;
+	background-color: #009900; /*background-color: #00ccf5;*/
+}
+
+.buttonStyle2
+{
+	border-right: #33cc99 1px solid;
+	border-top: #33cc99 1px solid;
+	border-left: #33cc99 1px solid;
+	border-bottom: #33cc99 1px solid;
+	height: 20px;
+	width:50px;
+	background-color: Transparent;
+	cursor: hand;
+	font-family:Verdana;
+	font-size:8pt;
+}
+
+.otherstyle
+{
+	border-right: #33cc99 1px solid;
+	border-top: #33cc99 1px solid;
+	border-left: #33cc99 1px solid;
+	border-bottom: #33cc99 1px solid;
+	height: 20px;
+	background-color: Transparent;
+	font-family:Verdana;
+	font-size:8pt;
+}
+
+.txtAreaStyle
+{
+	width: 483px;
+	height: 200px;
+	font-size: 8pt;
+	font-family: Verdana;
+}
+
+.newDivStyle
+{
+	width: 150px;
+	height: 150px;
+	border-right: #000000 1px solid;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	overflow:auto;
+	text-align:left;
+	
+}
+.innerDivStyle
+{
+	border-right: #ffccff 1px outset;
+	border-top: #ffccff 1px outset;
+	border-left: #ffccff 1px outset;
+	border-bottom: #ffccff 1px outset;
+}
+
+.arialtd
+{
+	font-size: 9pt;
+	font-family: arial;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.arialtd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.tmrtd
+{
+	font-size: 9pt;
+	font-family:Times New Roman;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;	
+}
+
+.tmrtd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.verdanatd
+{
+	font-size: 9pt;
+	font-family:Verdana;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.verdanatd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.cnewtd
+{
+	font-size: 9pt;
+	font-family:Courier New;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.cnewtd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.comictd
+{
+	font-size: 9pt;
+	font-family:Comic Sans MS;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.comictd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.impacttd
+{
+	font-size: 9pt;
+	font-family:Impact;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.impacttd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+
+.geotd
+{
+	font-size: 9pt;
+	font-family:Georgia;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.geotd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.tahomatd
+{
+	font-size: 9pt;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.tahomatd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.smallertd
+{
+	font-size:smaller;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.smallertd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.smalltd
+{
+	font-size:small;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.smalltd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.mediumtd
+{
+	font-size:medium;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.mediumtd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.largetd
+{
+	font-size:large;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.largetd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.largertd
+{
+	font-size:larger;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.largertd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.xlargetd
+{
+	font-size:x-large;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.xlargetd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.xxlargetd
+{
+	font-size:xx-large;
+	font-family:Tahoma;
+	padding-left: 5px;
+	cursor: hand;
+	text-align:left;
+	background-color:#fffcd1;
+	border:0px;
+	width:100%;
+}
+
+.xxlargetd:hover
+{
+	color: #ffffff;
+	background-color: #009900;
+}
+
+.colortd
+{
+	border-right: #ff0000 1px solid;
+	border-top: #ff0000 1px solid;
+	border-left: #ff0000 1px solid;
+	border-bottom: #ff0000 1px solid;
+	background-color:white;
+	cursor:hand;
+}
+
+.colortd:hover
+{
+	border-right: #ffffff 1px solid;
+	border-top: #ffffff 1px solid;
+	border-left: #ffffff 1px solid;
+	border-bottom: #ffffff 1px solid;
+	
+}
+
+.selStyle
+{
+	background-color: #009900;
+	color:#ffffff;
+}
+
+.norStyle
+{
+	background-color: #fffcd1;
+}
+

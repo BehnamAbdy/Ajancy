@@ -1,0 +1,123 @@
+﻿using System;
+using System.Linq;
+
+public partial class Management_HandleFuelCardReplacements : System.Web.UI.Page
+{
+    Ajancy.Kimia_Ajancy db = null;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            int substituteId = 0;
+            if (int.TryParse(Request.QueryString["id"], out substituteId) && Request.QueryString["txt"] != null && Request.QueryString["cfm"] != null)
+            {
+                db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+                Ajancy.FuelCardSubstitution substitution = db.FuelCardSubstitutions.FirstOrDefault<Ajancy.FuelCardSubstitution>(jc => jc.FuelCardSubstituteID == substituteId);
+                substitution.Reply = Request.QueryString["txt"].Length > 200 ? Request.QueryString["txt"].Substring(0, 200) : Request.QueryString["txt"];
+                substitution.ReplyDate = DateTime.Now;
+                substitution.Confirmed = Request.QueryString["cfm"].Equals("1");
+                db.SubmitChanges();
+                Response.Clear();
+                Response.Write("1");
+                Response.End();
+            }
+            else if (int.TryParse(Request.QueryString["id"], out substituteId) && Request.QueryString["txt"] == null && Request.QueryString["cfm"] == null)
+            {
+                db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+                Ajancy.FuelCardSubstitution substitution = db.FuelCardSubstitutions.FirstOrDefault<Ajancy.FuelCardSubstitution>(jc => jc.FuelCardSubstituteID == substituteId);
+                Response.Clear();
+                Response.Write(substitution.Reply);
+                Response.End();
+            }
+        }
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        db = new Ajancy.Kimia_Ajancy(Public.CONNECTIONSTRING);
+        var query = from fcs in db.FuelCardSubstitutions
+                    join fc in db.FuelCards on fcs.AjancyTypeFuelCardID equals fc.FuelCardID
+                    join c in db.Cars on fc.CarID equals c.CarID
+                    join cpn in db.CarPlateNumbers on c.CarID equals cpn.CarID
+                    join dcc in db.DriverCertificationCars on cpn.CarPlateNumberID equals dcc.CarPlateNumberID
+                    join dc in db.DriverCertifications on dcc.DriverCertificationID equals dc.DriverCertificationID
+                    join jd in db.AjancyDrivers on dcc.DriverCertificationCarID equals jd.DriverCertificationCarID
+                    join j in db.Ajancies on jd.AjancyID equals j.AjancyID
+                    join p in db.Persons on dc.PersonID equals p.PersonID
+
+                    join fc2 in db.FuelCards on fcs.PersonalTypeFuelCardID equals fc2.FuelCardID
+                    join c2 in db.Cars on fc2.CarID equals c2.CarID
+                    join cpn2 in db.CarPlateNumbers on c2.CarID equals cpn2.CarID
+                    join dcc2 in db.DriverCertificationCars on cpn2.CarPlateNumberID equals dcc2.CarPlateNumberID
+                    join dc2 in db.DriverCertifications on dcc2.DriverCertificationID equals dc2.DriverCertificationID
+                    join jd2 in db.AjancyDrivers on dcc2.DriverCertificationCarID equals jd2.DriverCertificationCarID
+                    join p2 in db.Persons on dc2.PersonID equals p2.PersonID
+
+                    where jd.LockOutDate == null &&
+                             fcs.PersonalTypeFuelCardID != null &&
+                             fc.CardType == (byte)Public.FuelCardType.Ajancy &&
+                             fc.DiscardDate == null &&
+                             dc.LockOutDate == null &&
+                             dcc.LockOutDate == null &&
+
+                             jd2.LockOutDate == null &&
+                             fc2.CardType == (byte)Public.FuelCardType.Personal &&
+                             fc2.DiscardDate == null &&
+                             dc2.LockOutDate == null &&
+                             dcc2.LockOutDate == null
+                    select new
+                    {
+                        FirstDriver = string.Concat(p.FirstName, "  ", p.LastName),
+                        DriverCertificationNo1 = dc.DriverCertificationNo,
+                        PAN1 = fc.PAN,
+                        SecondDriver = string.Concat(p2.FirstName, "  ", p2.LastName),
+                        DriverCertificationNo2 = dc2.DriverCertificationNo,
+                        PAN2 = fc2.PAN,
+                        fcs.UserInRoleID,
+                        fcs.SubmitDate,
+                        fcs.Comment,
+                        fcs.ReplyDate,
+                        Data = string.Concat("this, ", fcs.FuelCardSubstituteID, ", ", fcs.Confirmed ? "1" : "0"),
+                        j.AjancyName
+                    };
+
+        if (this.drpRequestorType.SelectedIndex == 0)
+        {
+            //query = from q in query
+            //        where q.RequestorRoleID == (byte)(Public.Role.AjancyManager) ||
+            //                 q.RequestorRoleID == (byte)(Public.Role.AjancySupervisor)
+            //        select q;
+        }
+        else
+        {
+            //query = from q in query
+            //        where q.RequestorRoleID == (byte)(Public.Role.TaxiDriver)
+            //        select q;
+        }
+
+
+        if (this.drpReplyMode.SelectedIndex == 0)
+        {
+            query = from q in query
+                    where q.ReplyDate != null
+                    select q;
+        }
+        else
+        {
+            query = from q in query
+                    where q.ReplyDate == null
+                    select q;
+        }
+
+        if (this.txtDateFrom.HasDate && this.txtDateTo.HasDate)
+        {
+            query = from q in query
+                    where q.SubmitDate >= this.txtDateFrom.GeorgianDate && q.SubmitDate <= this.txtDateTo.GeorgianDate
+                    select q;
+        }
+
+        this.lstSustitutions.DataSource = query;
+        this.lstSustitutions.DataBind();
+    }
+}

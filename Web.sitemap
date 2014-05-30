@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="" description="" roles="*">
+    <siteMapNode title="صفحه نخست" url="~/Default.aspx"></siteMapNode>
+
+    <siteMapNode title="کاربری" url="" roles="Admin,AjancyManager,CityManager,ProvinceManager,AcademyCity,AcademyProvince,Visitor">
+      <siteMapNode title="ویرایش گذرواژه" url="~/Members/EditPassword.aspx" roles="*"/>
+      <!--<siteMapNode title="بارگذاری مدارک" url="~/Members/UploadDocument.aspx" roles="CityManager,ProvinceManager"/>-->
+    </siteMapNode>
+
+    <siteMapNode title="مدیریت آژانس" roles="AjancyManager" >
+      <siteMapNode title="لیست رانندگان آژانس"  url="~/Ajancy/DriversList.aspx" roles="AjancyManager"></siteMapNode>
+      <!--<siteMapNode title="جایگزین کارت سوخت"  url="~/Ajancy/FuelCardReplacement.aspx" roles="AjancyManager"></siteMapNode>
+      <siteMapNode title="ابطال کارت سوخت"  url="~/Ajancy/FuelCardDiscard.aspx" roles="AjancyManager"></siteMapNode>-->
+      <siteMapNode title="راننده جدید"  url="~/Ajancy/Driver.aspx" roles="AjancyManager"></siteMapNode>
+      <siteMapNode title="ثبت پروانه کسب"  url="~/Ajancy/BusinessLicense.aspx" roles="AjancyManager"></siteMapNode>
+      <siteMapNode title="شکایات"  url="~/Ajancy/Complaints.aspx" roles="AjancyManager"></siteMapNode>
+    </siteMapNode>
+
+    <!--<siteMapNode title="گزارشات" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince,Visitor" >-->
+    <siteMapNode title="گزارشات" roles="Admin" >
+      <siteMapNode title="آمار رانندگان"  url="~/Reports/DriversReport.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince,Visitor"></siteMapNode>
+      <siteMapNode title="آمار ثبت رانندگان"  url="~/Reports/DriversReport2.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince,Visitor"></siteMapNode>
+      <siteMapNode title="لیست آژانس ها"  url="~/Reports/Ajancies.aspx" roles="Admin,CityManager,ProvinceManager"></siteMapNode>
+      <siteMapNode title="کارت سوخت های مسدود شده"  url="~/Reports/DiscardedFCsRep.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince"></siteMapNode>
+      <siteMapNode title="کارت سوخت های خطی و بین راهی"  url="~/Reports/FCDiscardsRep.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince"></siteMapNode>
+      <siteMapNode title="ابطال و جایگزین کارت سوخت"  url="~/Reports/FCReplacementsRep.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince"></siteMapNode>
+      <siteMapNode title="گزارش چاپی ابطال و جایگزین"  url="~/Reports/FCExcel.aspx" roles="Admin,CityManager,ProvinceManager,AcademyCity,AcademyProvince"></siteMapNode>
+      <siteMapNode title="گزارش بیمه"  url="~/Reports/InsuranceRep.aspx" roles="Admin,CityManager,ProvinceManager"></siteMapNode>
+      <siteMapNode title="گزارش آماری"  url="~/Reports/UnionReport.aspx" roles="Admin"></siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="مدیریت" roles="Admin,CityManager,ProvinceManager" >
+      <siteMapNode title="رانندگان متقاضی دفترچه صلاحیت"  url="~/Union/CertificationlessDrivers.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="افراد متقاضی پروانه کسب"  url="~/Management/BusinessLicenseRequests.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="جابجایی رانندگان"  url="~/Management/TransferDriver.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="مدیریت دسترسی کاربران"  url="~/Management/UserRolesStatus.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="مدیریت کاربران"  url="~/Management/UsersList.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ساخت کاربر"  url="~/Management/User.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت پروانه کسب"  url="~/Union/BusinessLicense.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت کارت سوخت خطی و بین راهی"  url="~/Union/FCDiscard.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ابطال و جایگزین کارت سوخت"  url="~/Union/FCReplacement.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="کارت سوخت های مسدود شده"  url="~/Union/DiscardedFCs.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="درخواست بیمه"  url="~/Union/Insurance.aspx?m=0" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="درخواست لغو بیمه"  url="~/Union/Insurance.aspx?m=1" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت کارت سوخت صادره"  url="~/Union/AddFuelCard.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت راننده"  url="~/Union/Driver.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="(VIN) انتقال مالکیت خوردو"  url="~/Union/TransferCarOwnerShip.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت خودرو جدید(فعال) برای راننده"  url="~/Union/AddCar.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="پلاک منطقه آزاد" roles="Admin,CityManager,ProvinceManager" >
+      <siteMapNode title="ثبت راننده"  url="~/Zone/Driver.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت کارت سوخت خطی و بین راهی"  url="~/Zone/FCDiscard.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ابطال و جایگزین کارت سوخت"  url="~/Zone/FCReplacement.aspx" roles="Admin,ProvinceManager,CityManager"></siteMapNode>
+      <siteMapNode title="ثبت خودرو جدید(فعال) برای راننده"  url="~/Zone/AddCar.aspx" roles="ProvinceManager,CityManager"></siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="سامانه" roles="Admin" >
+      <siteMapNode title="آیین نامه ها"  url="~/Site/EditTexts.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="بخشنامه ها"  url="~/Site/Letters.aspx" roles="Admin"></siteMapNode>
+      <!--<siteMapNode title="تصویر نامه ها"  url="~/Site/Images.aspx" roles="Admin"></siteMapNode>-->
+      <!--<siteMapNode title="پیوند ها"  url="~/Site/Links.aspx" roles="Admin"></siteMapNode>-->
+      <siteMapNode title="سوالات متداول"  url="~/Site/Questions.aspx" roles="Admin"></siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="آموزشگاه ها" roles="AcademyCity,AcademyProvince" >
+      <siteMapNode title="ثبت آموزشگاه"  url="~/Academy/BusinessLicense.aspx" roles="AcademyProvince,AcademyCity"></siteMapNode>
+      <siteMapNode title="لیست آموزشگاه ها"  url="~/Academy/Academies.aspx" roles="AcademyCity,AcademyProvince"></siteMapNode>
+      <siteMapNode title="ابطال کارت سوخت بدون جایگزین"  url="~/Academy/FCDiscard.aspx" roles="AcademyProvince,AcademyCity"></siteMapNode>
+      <siteMapNode title=" ابطال و جایگزین کارت سوخت"  url="~/Academy/FCReplacement.aspx" roles="AcademyProvince,AcademyCity"></siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="درخواست ها" roles="Admin" >
+      <!--<siteMapNode title="درخواستهای ابطال کارت سوخت"  url="~/Management/HandleFuelCardDiscards.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="درخواستهای جایگزین کارت سوخت"  url="~/Management/HandleFuelCardReplacements.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="درخواستهای پایان کار رانندگان"  url="~/Management/HandleEndMemberships.aspx" roles="Admin"></siteMapNode>-->
+      <siteMapNode title="شکایات آژانس ها و رانندگان"  url="~/Management/HandleComplaints.aspx" roles="Admin"></siteMapNode>
+      <siteMapNode title="شکایات مردمی"  url="~/Management/HandleComments.aspx" roles="Admin"></siteMapNode>
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>
